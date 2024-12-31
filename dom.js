@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  fetchWeather("Stockholm");
+});
+
 document.getElementById("search-button").addEventListener("click", () => {
   const city = document.getElementById("city-input").value; // Get city from input field
   fetchWeather(city); // Call the function to fetch weather data
@@ -38,6 +42,8 @@ function displayWeather(weatherData) {
   if (!Number.isInteger(temperature)) {
     temperature = Math.round(temperature);
   }
+
+  city = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
 
   temperatureElement.innerHTML = temperature + " °C";
   cityElement.innerHTML = city;
