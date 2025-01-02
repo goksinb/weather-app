@@ -50,6 +50,9 @@ function displayWeather(weatherData) {
   conditionsElement.innerHTML = conditions;
   commentsElement.innerHTML = comments;
 
+  const iconElement = document.getElementById("weather-icon");
+  const daysIconElement = document.getElementById("days-icon");
+
   const nextFiveDays = days.slice(1, 7);
 
   daysElement.innerHTML = "";
@@ -67,9 +70,23 @@ function displayWeather(weatherData) {
     dayElement.innerHTML = `
       <p>${dayName}</p>
       <p>${roundedTemp} °C</p>
+
     `;
 
     daysElement.appendChild(dayElement);
+
+    if (conditions.toLowerCase() === "partially cloudy") {
+      iconElement.innerHTML =
+        '<img src="images/icons/partially-cloudy-icon.png">';
+    } else if (conditions.toLowerCase() === "clear") {
+      iconElement.innerHTML =
+        '<img src="images/icons/partially-cloudy-icon.png">';
+    } else if (conditions.toLowerCase() === "snow") {
+      iconElement.innerHTML = "images/icons/partially-cloudy-icon.png";
+    } else {
+      iconElement.innerHTML =
+        '<img src="images/icons/partially-cloudy-icon.png">';
+    }
   });
 
   /*   if (temperature < 7) {

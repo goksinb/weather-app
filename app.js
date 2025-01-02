@@ -33,6 +33,8 @@ async function fetchWeather(city) {
   const apiKey = "2K2L6DL6AYNT37FPAFZHMAFD3"; // Replace with your actual API key
   const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=${apiKey}&contentType=json`;
 
+  /*  const apiUrl = `https://84c1de80-7079-49df-aaaa-a8da6bd78d0c.mock.pstmn.io`; */
+
   try {
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error("City not found");
