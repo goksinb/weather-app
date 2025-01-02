@@ -18,6 +18,7 @@ function displayWeather(weatherData) {
   let city = weatherData.address;
   let comments = weatherData.description;
   let conditions = weatherData.currentConditions.conditions;
+  let days = weatherData.days;
   const timeWithoutSeconds = new Date().toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit", // Exclude 'second' option
@@ -27,6 +28,7 @@ function displayWeather(weatherData) {
   let cityElement = document.getElementById("city");
   let conditionsElement = document.getElementById("conditions");
   let commentsElement = document.getElementById("comments");
+  let daysElement = document.getElementById("days");
   let gifElement = document.getElementById("gif");
   let backgroundElement = document.getElementsByClassName("background");
 
@@ -49,8 +51,29 @@ function displayWeather(weatherData) {
   cityElement.innerHTML = city;
   conditionsElement.innerHTML = conditions;
   commentsElement.innerHTML = comments;
-  dateTimeElement.innerHTML = dateTime;
 
+  const nextFiveDays = days.slice(1, 7); // Get the next 5 days
+
+  // Clear previous content
+  daysElement.innerHTML = "";
+
+  nextFiveDays.forEach((day) => {
+    const dayElement = document.createElement("div"); // Create a new div for each day
+
+    // Convert the date to a day name
+    const dayName = new Date(day.datetime).toLocaleDateString("en-US", {
+      weekday: "long",
+    });
+
+    // Add day details (adjust structure as needed)
+    dayElement.innerHTML = `
+      <p>${dayName}</p>
+      <p>${day.temp} °C</p>
+    `;
+
+    // Append the new day element to the days container
+    daysElement.appendChild(dayElement);
+  });
   /*   if (temperature < 7) {
     gifElement.innerHTML =
       '<img src="images/sweater.gif" alt="Wear a sweater">';
