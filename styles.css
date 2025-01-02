@@ -112,3 +112,28 @@ p {
   font-size: 25px;
   color: antiquewhite;
 }
+
+@media (max-width: 1000px) {
+  .main-container {
+    align-items: center;
+  }
+
+  #city-input {
+    background-color: rgba(255, 255, 255, 0.435);
+
+    width: 300px;
+  }
+  .weather-info {
+    margin-top: 20px;
+    gap: 10px;
+  }
+  .city-time {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  #time-display {
+    font-size: 1rem;
+  }
+}
