@@ -15,7 +15,7 @@ document.getElementById("city-input").addEventListener("keypress", (event) => {
 
 function displayWeather(weatherData) {
   let temperature = weatherData.currentConditions.temp;
-  let city = weatherData.address;
+  let city = weatherData.resolvedAddress;
   let comments = weatherData.description;
   let conditions = weatherData.currentConditions.conditions;
   let days = weatherData.days;
@@ -45,35 +45,33 @@ function displayWeather(weatherData) {
     temperature = Math.round(temperature);
   }
 
-  city = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
-
   temperatureElement.innerHTML = temperature + " °C";
   cityElement.innerHTML = city;
   conditionsElement.innerHTML = conditions;
   commentsElement.innerHTML = comments;
 
-  const nextFiveDays = days.slice(1, 7); // Get the next 5 days
+  const nextFiveDays = days.slice(1, 7);
 
-  // Clear previous content
   daysElement.innerHTML = "";
 
   nextFiveDays.forEach((day) => {
-    const dayElement = document.createElement("div"); // Create a new div for each day
+    const dayElement = document.createElement("div");
 
     // Convert the date to a day name
     const dayName = new Date(day.datetime).toLocaleDateString("en-US", {
       weekday: "long",
     });
 
-    // Add day details (adjust structure as needed)
+    const roundedTemp = Math.round(day.temp);
+
     dayElement.innerHTML = `
       <p>${dayName}</p>
-      <p>${day.temp} °C</p>
+      <p>${roundedTemp} °C</p>
     `;
 
-    // Append the new day element to the days container
     daysElement.appendChild(dayElement);
   });
+
   /*   if (temperature < 7) {
     gifElement.innerHTML =
       '<img src="images/sweater.gif" alt="Wear a sweater">';
