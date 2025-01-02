@@ -98,13 +98,13 @@ p {
 }
 
 #temperature {
-  font-size: 50px;
+  font-size: 3rem;
   font-weight: 600;
   color: antiquewhite;
 }
 
 #conditions {
-  font-size: 50px;
+  font-size: 3rem;
   color: antiquewhite;
 }
 
@@ -134,6 +134,11 @@ p {
   }
 
   #time-display {
-    font-size: 1rem;
+    display: none;
+  }
+
+  #temperature,
+  #conditions {
+    font-size: 2rem;
   }
 }
