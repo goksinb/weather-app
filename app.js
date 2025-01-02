@@ -37,6 +37,7 @@ async function fetchWeather(city) {
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error("City not found");
     const weatherData = await response.json();
+    console.log(weatherData);
 
     displayWeather(weatherData); // Function to update the display with weather data
   } catch (error) {
