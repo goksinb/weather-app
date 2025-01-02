@@ -99,14 +99,24 @@ p {
 }
 
 #temperature {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: antiquewhite;
 }
 
 #conditions {
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: antiquewhite;
+}
+
+#weather-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+#days-icon img {
+  width: 40px;
+  height: 40px;
 }
 
 #comments {
