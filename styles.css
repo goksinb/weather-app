@@ -3,7 +3,6 @@ body {
   margin: 0;
   font-family: "Inter", sans-serif;
   font-weight: 200;
-  overflow: hidden;
 }
 
 p {
@@ -134,7 +133,7 @@ p {
 }
 
 #temperature {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: antiquewhite;
 }
@@ -145,9 +144,6 @@ p {
 }
 
 @media (max-width: 1000px) {
-  body {
-    overflow: hidden;
-  }
   .main-container {
     align-items: center;
   }
@@ -185,13 +181,11 @@ p {
   }
 
   #conditions {
-    font-size: 1.5rem;
-    color: antiquewhite;
+    font-size: 1.4rem;
   }
 
   #temperature {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
     font-weight: 600;
-    color: antiquewhite;
   }
 }
