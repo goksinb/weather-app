@@ -19,10 +19,7 @@ function displayWeather(weatherData) {
   let comments = weatherData.description;
   let conditions = weatherData.currentConditions.conditions;
   let days = weatherData.days;
-  const timeWithoutSeconds = new Date().toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit", // Exclude 'second' option
-  });
+  const timeWithoutSeconds = weatherData.currentConditions.datetime;
 
   let temperatureElement = document.getElementById("temperature");
   let cityElement = document.getElementById("city");
@@ -32,14 +29,14 @@ function displayWeather(weatherData) {
   let gifElement = document.getElementById("gif");
   let backgroundElement = document.getElementsByClassName("background");
 
-  function updateTime() {
+  /*   function updateTime() {
     const timeElement = document.getElementById("time-display");
     timeElement.textContent = timeWithoutSeconds;
   }
 
   setInterval(updateTime, 1000);
 
-  updateTime();
+  updateTime(); */
 
   if (!Number.isInteger(temperature)) {
     temperature = Math.round(temperature);
