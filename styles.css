@@ -176,7 +176,7 @@ textarea {
   }
 
   #city {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .temperature-conditions {
@@ -185,11 +185,20 @@ textarea {
   }
 
   #conditions {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  #weather-icon img {
+    width: 30px;
+    height: 30px;
   }
 
   #temperature {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
     font-weight: 600;
+  }
+
+  #comments {
+    font-size: 1.5rem;
   }
 }
